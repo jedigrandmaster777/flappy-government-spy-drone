@@ -19,8 +19,9 @@ pjs.draw = function(){
 	canvas.background(255, 255, 255);
 
 	canvas.fill(255, 255, 0);
-  
-	canvas.rect(100 - 10, bird.y - 10, 20, 20);
+  	
+	canvas.ctx.drawImage(document.getElementById("drone"), 100 - 15, bird.y - 15, 30, 30);
+	//canvas.rect(100 - 10, bird.y - 10, 20, 20);
   
   canvas.fill(0, 255, 0);
   canvas.rect(pipe.x - 50, pipe.y, 50, 400);
