@@ -16,7 +16,8 @@ let pipe = {
 pjs.draw = function(){
 	score.textContent = `Score: ${bird.score}`;
 
-	canvas.background(255, 255, 255);
+	canvas.background(0, 153, 204);
+	canvas.ctx.drawImage(document.getElementById("background"), 0, 150);
 
 	canvas.fill(255, 255, 0);
   	
