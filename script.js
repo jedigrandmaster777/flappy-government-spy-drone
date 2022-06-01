@@ -21,11 +21,13 @@ pjs.draw = function(){
 	canvas.fill(255, 255, 0);
   	
 	canvas.ctx.drawImage(document.getElementById("drone"), 100 - 15, bird.y - 15, 30, 30);
+	canvas.ctx.drawImage(document.getElementById("pipe"), pipe.x - 55, pipe.y);
+	canvas.ctx.drawImage(document.getElementById("pipeUpsideDown"), pipe.x - 55, pipe.y - 470);
 	//canvas.rect(100 - 10, bird.y - 10, 20, 20);
   
   canvas.fill(0, 255, 0);
-  canvas.rect(pipe.x - 50, pipe.y, 50, 400);
-  canvas.rect(pipe.x - 50, 0, 50, pipe.y - 100);
+  //canvas.rect(pipe.x - 50, pipe.y, 50, 400);
+  //canvas.rect(pipe.x - 50, 0, 50, pipe.y - 100);
   
   bird.y += bird.motion;
   bird.motion++;
