@@ -9,7 +9,7 @@ let bird = {
   score: 0
 };
 let pipe = {
-	x: 400,
+	x: 450,
   y: 200
 };
 
@@ -41,14 +41,14 @@ pjs.draw = function(){
       score: 0
 		};
     pipe = {
-			x: 400,
+			x: 450,
  			y: 200
 		};
   }
   
   pipe.x -= 5;
   if(pipe.x < 0){
-  	pipe.x = 400;
+  	pipe.x = 450;
     pipe.y = pjs.random(100, 300);
     bird.score++;
   }
@@ -62,7 +62,7 @@ pjs.draw = function(){
         score: 0
 			};
 			pipe = {
-				x: 400,
+				x: 450,
  				y: 200
 			};
     }
