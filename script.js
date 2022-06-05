@@ -80,3 +80,8 @@ pjs.keyPressed = function(e){
 	
 	bird.motion = -10;
 }
+pjs.mouseClicked = function(){
+	paused = false;
+	
+	bird.motion = -10;
+}
