@@ -1,5 +1,4 @@
 const canvas = pjs.createCanvas();
-const score = document.getElementById("score");
 
 let paused = false; //paused starts out as false, to draw the screen at first, and is then set to true
 
@@ -16,8 +15,6 @@ let pipe = {
 
 pjs.draw = function(){
 	if(paused) return;
-	
-	score.textContent = `Score: ${bird.score}`;
 
 	canvas.background(0, 153, 204);
 	canvas.ctx.drawImage(document.getElementById("background"), 0, 150);
