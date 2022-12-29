@@ -73,6 +73,8 @@ const draw = function(){
 		}
 	}
 }
+setInterval(draw, 30);
+
 
 draw(); //explained above
 paused = true;
