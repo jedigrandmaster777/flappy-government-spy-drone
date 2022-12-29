@@ -1,5 +1,12 @@
-const canvas = pjs.createCanvas();
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
+const images = {
+	background: document.getElementById("background"),
+	drone: document.getElementById("drone"),
+	pipe: document.getElementById("pipe"),
+	pipeUpsideDown: document.getElementById("pipeUpsideDown")
+}
 let paused = false; //paused starts out as false, to draw the screen at first, and is then set to true
 
 let bird = {
@@ -13,21 +20,19 @@ let pipe = {
  	y: 200
 };
 
-pjs.draw = function(){
+const draw = function(){
 	if(paused) return;
 
-	canvas.background(0, 153, 204);
-	canvas.ctx.drawImage(document.getElementById("background"), 0, 150);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.drawImage(images.background, 0, 150); //TODO make this support canvas resizing
 
-	canvas.fill(255, 255, 0);
+	ctx.fillStyle = "rgb(255, 255, 0)";
   	
-	canvas.ctx.drawImage(document.getElementById("drone"), 100 - 15, bird.y - 15, 30, 30);
-	canvas.ctx.drawImage(document.getElementById("pipe"), pipe.x - 55, pipe.y);
-	canvas.ctx.drawImage(document.getElementById("pipeUpsideDown"), pipe.x - 55, pipe.y - 470);
-	//canvas.rect(100 - 10, bird.y - 10, 20, 20);
-  	canvas.fill(0, 255, 0);
-	//canvas.rect(pipe.x - 50, pipe.y, 50, 400);
-	//canvas.rect(pipe.x - 50, 0, 50, pipe.y - 100);
+	ctx.drawImage(images.drone, 100 - 15, bird.y - 15, 30, 30);
+	ctx.drawImage(images.pipe, pipe.x - 55, pipe.y);
+	ctx.drawImage(images.pipeUpsideDown, pipe.x - 55, pipe.y - 470);
+	
+  	ctx.fillStyle = "rgb(0, 255, 0)";
 	
 	bird.y += bird.motion;
 	bird.motion++;
@@ -69,15 +74,15 @@ pjs.draw = function(){
 	}
 }
 
-pjs.draw(); //explained above
+draw(); //explained above
 paused = true;
 
-pjs.keyPressed = function(e){
+window.onkeydown = function(e){
 	paused = false;
 	
 	bird.motion = -10;
 }
-pjs.mouseClicked = function(){
+document.onmousedown = function(){
 	paused = false;
 	
 	bird.motion = -10;
