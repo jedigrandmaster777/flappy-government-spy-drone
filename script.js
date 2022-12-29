@@ -37,7 +37,7 @@ const draw = function(){
 	bird.y += bird.motion;
 	bird.motion++;
 	
-	if(bird.y > 400){
+	if(bird.y > canvas.height){
 		bird = {
 			real: false,
 			y: 200,
@@ -45,14 +45,14 @@ const draw = function(){
 			score: 0
 		};
 		pipe = {
-			x: 450,
+			x: canvas.width + 50,
 			y: 200
 		};
 		paused = true;
 	}
 	pipe.x -= 5;
 	if(pipe.x < 0){
-		pipe.x = 450;
+		pipe.x = canvas.width + 50;
 		pipe.y = Math.floor(Math.random() * (300 - 100) + 100);
 		bird.score++;
 	}
@@ -66,7 +66,7 @@ const draw = function(){
 				score: 0
 			};
 			pipe = {
-				x: 450,
+				x: canvas.width + 50,
 				y: 200
 			};
 			paused = true
