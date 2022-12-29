@@ -53,7 +53,7 @@ const draw = function(){
 	pipe.x -= 5;
 	if(pipe.x < 0){
 		pipe.x = canvas.width + images.pipe.width;
-		pipe.y = Math.floor(Math.random() * (300 - 100) + 100);
+		pipe.y = Math.floor(Math.random() * (canvas.height - 200) + 100);
 		bird.score++;
 	}
 	
