@@ -16,7 +16,7 @@ let bird = {
 	score: 0
 };
 let pipe = {
-	x: canvas.width + images.pipe.width,
+	x: canvas.width - images.pipe.width,
  	y: 200
 };
 
