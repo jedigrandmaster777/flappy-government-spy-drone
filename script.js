@@ -16,7 +16,7 @@ let bird = {
 	score: 0
 };
 let pipe = {
-	x: 450,
+	x: canvas.width + images.pipe.width,
  	y: 200
 };
 
@@ -45,14 +45,14 @@ const draw = function(){
 			score: 0
 		};
 		pipe = {
-			x: canvas.width + 50,
+			x: canvas.width + images.pipe.width,
 			y: 200
 		};
 		paused = true;
 	}
 	pipe.x -= 5;
 	if(pipe.x < 0){
-		pipe.x = canvas.width + 50;
+		pipe.x = canvas.width + images.pipe.width;
 		pipe.y = Math.floor(Math.random() * (300 - 100) + 100);
 		bird.score++;
 	}
@@ -66,7 +66,7 @@ const draw = function(){
 				score: 0
 			};
 			pipe = {
-				x: canvas.width + 50,
+				x: canvas.width + images.pipe.width,
 				y: 200
 			};
 			paused = true
