@@ -24,7 +24,7 @@ const draw = function(){
 	if(paused) return;
 
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	ctx.drawImage(images.background, 0, 150); //TODO make this support canvas resizing
+	ctx.drawImage(images.background, 0, 400 - images.background.height); //TODO make this support canvas resizing
 
 	ctx.fillStyle = "rgb(255, 255, 0)";
   	
